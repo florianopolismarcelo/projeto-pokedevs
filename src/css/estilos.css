@@ -3,6 +3,20 @@ body {
   background-image: url(../imagens/background.png);
   background-size: cover;
 }
+/*
+Observação: O código abaixo é para dar um opacidade ao body, porém a linha do código backdrop-filter: blur(8px); da erro e mesmo assim funciona.
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  backdrop-filter: blur(8px);
+}
+*/
 main {
   display: flex;
   justify-content: center;
@@ -11,9 +25,17 @@ main {
   min-height: 100vh;
 }
 
+.pokedevs {
+  display: flex;
+  gap: 30px;
+  padding: 30px 0;
+}
+
 .cartao-pokedev {
   display: none;
   max-width: 360px;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .cartao-pokedev.aberto {
@@ -46,7 +68,6 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 }
 .cartao-pokedev .cartao-informacoes {
   background-color: #ffffff;
@@ -56,4 +77,71 @@ main {
   margin-top: -70px;
   border-bottom-left-radius: 8px;
   border-top-right-radius: 8px;
+}
+.cartao-pokedev .cartao-informacoes h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #6b727a;
+}
+
+.cartao-pokedev .cartao-informacoes .cartao-descricao {
+  padding: 0 10px;
+  font-size: 15px;
+  max-height: 150px;
+  overflow-y: scroll;
+}
+
+.tipo-eletrico {
+  background-color: #fcc719;
+}
+
+.tipo-fogo {
+  background-color: #f15000d2;
+}
+
+.tipo-agua {
+  background-color: #015c98;
+}
+
+.tipo-grama {
+  background-color: #49d080;
+}
+
+.tipo-trevas {
+  background-color: #ba68c8;
+}
+
+.tipo-fada {
+  background-color: #c29791;
+}
+.listagem {
+  max-width: 200px;
+}
+.listagem .pokedev img {
+  width: 25%;
+}
+
+.listagem .pokedev {
+  background-color: #6b727a;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  min-height: 70px;
+
+  transition: 0.15 ease-in-out;
+}
+
+.listagem .pokedev span {
+  padding-right: 20px;
+}
+
+.listagem .pokedev.ativo {
+  background-color: #fa6668;
 }
