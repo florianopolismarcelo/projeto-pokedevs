@@ -2,6 +2,7 @@ body {
   font-family: "Poppins", sans-serif;
   background-image: url(../imagens/background.png);
   background-size: cover;
+  background-position: center;
 }
 /*
 Observação: O código abaixo é para dar um opacidade ao body, porém a linha do código backdrop-filter: blur(8px); da erro e mesmo assim funciona.
